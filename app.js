@@ -67,7 +67,7 @@ app.get("/players/:playerId/", async (request, response) => {
     FROM
       player_details
     WHERE
-      player_id: ${playerId};`;
+      player_id = ${playerId};`;
 
   const player = await database.get(getPlayerQuery);
   response.send(player);
